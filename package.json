@@ -2,6 +2,14 @@
   "name": "ajs",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/galya0897/ajs-homeworks-test-ci2#readme",
+  "bugs": {
+    "url": "https://github.com/galya0897/ajs-homeworks-test-ci2/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galya0897/ajs-homeworks-test-ci2.git"
+  },
   "license": "MIT",
   "author": "Rysaev Damir <freepad@ya.ru>",
   "type": "commonjs",

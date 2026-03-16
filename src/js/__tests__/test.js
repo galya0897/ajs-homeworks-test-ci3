@@ -1,34 +1,31 @@
-import showHealth from '../showHealth';
+import sortUnits from '../sort';
 
-test('should healthy', () => {
-  const received = showHealth({ name: 'Маг', health: 90 });
-  expect(received).toBe('healthy');
+test('sort tobe mistake', () => {
+  const a = [
+    { name: 'мечник', health: 10 },
+    { name: 'маг', health: 100 },
+    { name: 'лучник', health: 80 },
+  ];
+  const b = [
+    { name: 'маг', health: 100 },
+    { name: 'лучник', health: 80 },
+    { name: 'мечник', health: 10 },
+  ];
+  const result = sortUnits(a);
+  expect(result).not.toBe(b);
 });
 
-test('should wounded', () => {
-  const received = showHealth({ name: 'Маг', health: 40 });
-  expect(received).toBe('wounded');
-});
-
-test('should critical', () => {
-  const received = showHealth({ name: 'Маг', health: 10 });
-  expect(received).toBe('critical');
-});
-
-test('Parameter is not a number!', () => {
-  expect(() => {
-    showHealth({});
-  }).toThrow();
-});
-
-test('Parameter is not a number!', () => {
-  expect(() => {
-    showHealth({ name: 'Маг', health: 'mistake' });
-  }).toThrow();
-});
-
-test('Parameter is not a number!', () => {
-  expect(() => {
-    showHealth({ name: 'Маг', health: -10 });
-  }).toThrow();
+test('sort toEqual success', () => {
+  const a = [
+    { name: 'мечник', health: 10 },
+    { name: 'маг', health: 100 },
+    { name: 'лучник', health: 80 },
+  ];
+  const b = [
+    { name: 'маг', health: 100 },
+    { name: 'лучник', health: 80 },
+    { name: 'мечник', health: 10 },
+  ];
+  const result = sortUnits(a);
+  expect(result).toEqual(b);
 });
